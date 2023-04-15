@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Tilt from "react-parallax-tilt";
 
-import { github, link } from "../assets";
+import {  link } from "../assets";
 
 import { styles } from "../styles";
 import { motion } from "framer-motion";

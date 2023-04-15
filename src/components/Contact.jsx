@@ -19,7 +19,7 @@ const Contact = () => {
     message: "",
   });
 
-  // const [loading, setLoading] = useState(false);
+
 
   function handleChange(e) {
    const {name, value} = e.target;
