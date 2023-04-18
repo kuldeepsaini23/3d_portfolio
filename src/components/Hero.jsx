@@ -33,11 +33,11 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#915EFF]'>{hero[0]?.name}</span>
+            Hi, I'm <span className='text-[#915EFF]'>Diago</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-          {hero[0]?.title.substring(0,30)} <br className='sm:block hidden' />
-          {hero[0]?.title.substring(30,100) + "..."}
+          I am a Video Editor<br className='sm:block hidden' />
+          and Motion Designer
           </p>
         </div>
 
