@@ -6,6 +6,7 @@ import { ComputersCanvas } from "./canvas";
 import {client, urlFor} from '../client'
 
 
+
 const Hero = () => {
 
   const [hero, setHero] = useState([])
@@ -39,6 +40,9 @@ const Hero = () => {
           {hero[0]?.title.substring(30,100) + "..."}
           </p>
         </div>
+
+       
+       
       </div>
 
       <ComputersCanvas />

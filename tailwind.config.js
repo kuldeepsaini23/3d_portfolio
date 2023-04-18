@@ -16,6 +16,7 @@ export const theme = {
     },
     screens: {
       xs: "450px",
+      sp:"750px",
     },
     backgroundImage: {
       "hero-pattern": "url('/src/assets/herobg.png')",

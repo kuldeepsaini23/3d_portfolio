@@ -7,48 +7,51 @@ import { client, urlFor } from "../client";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ServiceCard = ({ index, title, imgUrl }) => (
-  <Tilt className="xs:w-[250px] w-full">
-    <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
-    >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
-      >
-      
-       <img src={urlFor(imgUrl).url()} alt={title}  className="w-16 h-16 object-contain"/>
+import AllSocialMedia from "./AllSocialMedia";
 
-        <h3 className="text-white text-[20px] font-bold text-center">
-          {title}
-        </h3>
-      </div>
-    </motion.div>
-  </Tilt>
-);
+
+
+// const ServiceCard = ({ index, title, imgUrl }) => (
+//   <Tilt className="xs:w-[250px] w-full">
+//     <motion.div
+//       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+//       className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+//     >
+//       <div
+//         options={{
+//           max: 45,
+//           scale: 1,
+//           speed: 450,
+//         }}
+//         className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
+//       >
+
+//        <img src={urlFor(imgUrl).url()} alt={title}  className="w-16 h-16 object-contain"/>
+
+//         <h3 className="text-white text-[20px] font-bold text-center">
+//           {title}
+//         </h3>
+//       </div>
+//     </motion.div>
+//   </Tilt>
+// );
 
 const About = () => {
-  const [services, setServices] = useState([])
+  const [services, setServices] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     const query = '*[_type == "abouts"]';
 
-    client.fetch(query).then((data)=>{
+    client.fetch(query).then((data) => {
       setServices(data);
-     
-    })
-  },[])
+    });
+  }, []);
 
   return (
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <h2 className={styles.sectionHeadText}>Overview</h2>
       </motion.div>
 
       <motion.p
@@ -59,15 +62,20 @@ const About = () => {
         designer having years of experience in video editing. I make engaging
         videos for my clients and help people to solve their problems by editing
         their videos and rocket their views.
-
-        
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10 justify-center">
+      <motion.div
+        variants={fadeIn("", "left", 1 * 0.5, 0.75)}
+        className="flex justify-center items-center mt-14 mx-auto"
+      >
+        <AllSocialMedia />
+      </motion.div>
+
+      {/* <div className="mt-20 flex flex-wrap gap-10 justify-center">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
-      </div>
+      </div> */}
     </>
   );
 };
